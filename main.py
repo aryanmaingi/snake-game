@@ -14,7 +14,7 @@ i = 0
 snake = Snake()
 food = Food()
 score = Score()
-type = int(screen.numinput("DIFFICULTY","Enter: ", minval=1, maxval=3))
+type = int(screen.numinput("DIFFICULTY", "Enter: ", minval=1, maxval=3))
 speed = [0.1, 0.05, 0.025]
 
 screen.listen()
@@ -38,12 +38,14 @@ while game:
 
     # detect wall collision
     if snake.head.xcor() < -290 or snake.head.xcor() > 290 or snake.head.ycor() > 290 or snake.head.ycor() < -290:
-        score.game_over()
-        game = False
+        snake.reset()
+        score.reset()
+
 
     for seg in snake.segments[1::]:
         if snake.head.distance(seg) < 10:
-            score.game_over()
-            game = False
+            score.reset()
+            snake.reset()
+
 
 screen.exitonclick()
