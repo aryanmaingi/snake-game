@@ -11,6 +11,7 @@ screen.title("my snake game ")
 screen.tracer(0)
 i = 0
 
+
 snake = Snake()
 food = Food()
 score = Score()

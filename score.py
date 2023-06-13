@@ -26,7 +26,7 @@ class Score(Turtle):
                 data.write(f"{self.high_score}")
         self.sc = 0
         self.score_cr()
-
+    #function to play one time
     # def game_over(self):
     #     self.clear()
     #     self.goto(0, 0)
